@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>myCASA</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/furnace.min.css">
+	<link rel="stylesheet" href="css/lead.css">
+
+</head>
+
+<body class="live-demo au-body au-grid arn-application">
+
+<main class="au-grid">
+
+<body class="live-demo au-body au-grid js">
+	<header class="au-header logo au-body au-body--dark" role="banner">
+	<div class="header">
+		<div class="container">
+	    <div class="row">
+	      <div class="col-md-9 col-xs-7">
+	        <a class="au-header__brand" href="dashboard.html">
+	          <img class="au-header__brand-image" alt="my CASA" src="img/CASALOGO-white-i.svg">
+	        </a>
+	      </div>
+	      <div class="col-md-3 col-xs-5"><a class="au-btn au-btn--dark" href="mycasa.html" id="signout">Sign out</a></div>
+	    </div>
+		</div>
+	</div>
+	</header>
+	<div class="banner">
+	<div class=container>
+		<style>
+			.banner {padding-left: 25px;}
+			.banner {padding-top: 10px;}
+			.banner {padding-bottom: 10px;}
+			
+			.au-cta-link.disabled:hover, .au-cta-link.disabled{cursor:not-allowed !important; filter: grayscale(100%);opacity:0.7;text-decoration: none !important}
+
+		</style>
+		This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
+	</div>
+	</div>
+
+		<div class="container">
+
+			<div class="col-md-12">
+
+			<header class="au-header" role="banner">
+				<h1 class="au-header-heading">Welcome to myCASA</h1>
+
+				
+				
+				<p>In order to access MyCASA services you will first need to apply for or link an existing ARN.</p>
+				
+				<br />
+				
+				<p class="au-callout">
+					
+					
+				<a class="au-cta-link" href="#">Apply for aviation reference number (ARN)</a>
+					<br />
+					
+					<br />
+					Already have an ARN? <a href="personal-details.html">You can link it to your myCASA account</a>.
+					
+				</p>
+				
+				
+				
+			</header>
+			
+		</div>
+	</div>
+
+<div class="footer">
+		<div class="footer-wrapper">
+			<iframe src="footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+		</div>
+	</div>
+
+
+</main>
+
+<script type="text/javascript" src="js/furnace.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.js"></script>
+<script>
+		var type = window.location.hash.substr(1);
+		if (type=='in-progress'){
+			$('#in-progress').removeClass('hidden');
+			/*$('#link-active').addClass('hidden');
+			$('#link-active').find('h3').addClass('hidden');*/
+			$('#save, #link-active').addClass('hidden');
+		}
+		if (type=='save'){
+			$('#save').removeClass('hidden');
+
+			$('#in-progress').addClass('hidden');
+			/*$('#link-active').removeClass('hidden');
+			$('#link-active').find('h3').removeClass('hidden');*/
+		}
+
+
+			var type = window.location.hash.substr(1);
+			if(type=='in-progress'){
+				$('#signout').attr("href", "mycasa-update.html");
+			}else if(type !=='org'){
+				//alert(3);
+				$('#signout').attr("href", "mycasa.html");
+			}
+
+
+</script>
+
+</body>
+</html>
