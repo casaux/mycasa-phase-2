@@ -1,0 +1,498 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>myCASA - grid</title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="initial-scale=1">
+      <link rel="stylesheet" href="css/furnace.min.css">
+      <link rel="stylesheet" href="css/casa.css">
+      <script type="text/javascript" src="js/furnace.min.js"></script>
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script type="text/javascript" src="js/jquery.js"></script>
+      <script type="text/javascript">
+         /* page specific js */
+         
+         $(document).ready(function() {
+         
+        
+		    $('#validate').bind("click", function() {
+         
+             var given_names = $("#given-name-input").val();
+             var family_name = $("#family-name-input").val();
+             var dob = "";
+             var acq_date = "";
+             var stock_number = "";
+         
+             var output = "";
+		  
+		    function getDOB(){
+         
+				 if($("#text-input-block1").val().length==1){
+				 $("#text-input-block1").val("0"+$("#text-input-block1").val());
+				 }
+
+				 if($("#text-input-block2").val().length==1){
+				 $("#text-input-block2").val("0"+$("#text-input-block2").val());
+				 }
+
+				 var DD = 	$("#text-input-block1").val();
+				 var MM = 	$("#text-input-block2").val();
+				 var YYYY = 	$("#text-input-block3").val();
+
+				 dob = DD+"/"+MM+"/"+YYYY;
+
+			}
+				
+			function getAcqDate(){
+         
+				 if($("#acq-input-block1").val().length==1){
+					$("#acq-input-block1").val("0"+$("#acq-input-block1").val());
+				 }
+         
+				 if($("#acq-input-block2").val().length==1){
+				 $("#acq-input-block2").val("0"+$("#acq-input-block2").val());
+				 }
+
+				 var DD = 	$("#acq-input-block1").val();
+				 var MM = 	$("#acq-input-block2").val();
+				 var YYYY = 	$("#acq-input-block3").val();
+				 acq_date = DD+"/"+MM+"/"+YYYY;
+
+			}
+				
+				
+			getDOB();
+			getAcqDate();
+				
+				
+			stock_number = $("#r-cc-stock-number-input").val();
+	
+         
+             output = "GivenName|" + given_names + ";FamilyName|" + family_name + 
+			";StockNumber|" + stock_number +
+			";DateOfBirth|" + dob +
+			";AcquisitionDate|" + acq_date;
+         });
+      </script>
+      <style type="text/css">
+         /* page specific css */
+         
+         
+         
+         #validate {
+		  display: block;
+		  }
+		  .form-sub-input {
+		  margin-left: 2.5em;
+		  }
+		  .panel .form-sub-input{
+		  opacity:0.5;
+		  }
+		  .panel.active .form-sub-input{
+		  opacity:1;
+		  }
+		   
+		  .date-limit{
+		  display:none;
+		  }
+		  .panel .au-control-input__input{
+		  display:block;
+		  height:0;
+		  width:0;
+		  }
+		   
+		   #date-limit span, .input-state{
+			   display:none;
+		   }
+         
+         
+      </style>
+   </head>
+   <body class="live-demo au-body au-grid">
+      <main class="au-grid">
+         <div class="header">
+            <div class="container">
+               <div class="row">
+                  <div class="logo au-body au-body--dark">
+                     <a href="index.html"><img src="img/CASALOGO-white-i.svg" width="192"></a>
+                  </div>
+                  <div class="menu">
+                     <img src="img/menu.svg" width="24">
+                     <span class="menu-label">Menu</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="body">
+            <div class="container">
+               <nav class="au-breadcrumbs" aria-label="breadcrumb">
+                  <ul class="au-link-list au-link-list--inline">
+                     <li><a href="welcome.html">myCASA</a></li>
+                     <li><abbr title="Aviation reference number">ARN</abbr> application</li>
+                  </ul>
+               </nav>
+               <div id="section_validation_panelAustralianBirthCertificate" style="display: none;">
+                  <div id="validation-error">
+                     <div class="au-body au-page-alerts au-page-alerts--error" id="error_message_panelAustralianBirthCertificate" style="display: none;">
+                        <h3>There was a problem submitting the form</h3>
+                        <p>Please check the form again before proceeding</p>
+                     </div>
+                     <div class="au-body au-page-alerts au-page-alerts--success" id="success_message_panelAustralianBirthCertificate" style="display:none;"></div>
+                     <div class="au-body au-page-alerts au-page-alerts--warning" id="warning_message_panelAustralianBirthCertificate" style="">
+                        <h3>There was a problem verifying your citizenship certificate.</h3>
+                        <p>Please review your details and try again.<br>You have <b>4 attempts</b> remaining.</p>
+                        <p>Alternatively you can <a href="#" onclick="javascript: returnToPOIPrimarySelection ();">return to the previous screen</a> and select a different form of primary identification. Or <a href="#" onclick="javascript: enableAndNavigateToUploadPanel ('panelAustralianBirthCertificate', 'Australian citizenship certificate');">upload a certified copy of your documentation</a> for manual verification.</p>
+                     </div>
+                  </div>
+               </div>
+               <div id="date-limit" style="display:none;">
+                  <div class="au-body au-page-alerts au-page-alerts--warning" id="warning_message_panelAustralianBirthCertificate" style="">
+                     <h3>Unfortunately we are unable to verify your citizenship certificate</h3>
+                     <p>We are unable to verify 
+                        <span id="nsw-date-limit">
+                        New South Wales citizenship certificates before 1 January 1914.
+                        </span>
+                        <span id="tas-date-limit">
+                        Tasmanian citizenship certificates before 1 January 1970.
+                        </span>
+                        <span id="wa-date-limit">
+                        Western Australian citizenship certificates before 1 January 1841.
+                        </span>
+                        <span id="qld-date-limit">
+                        Queensland citizenship certificates before 1 January 1941.
+                        </span>
+                        <span id="vic-date-limit">
+                        Victorian citizenship certificates before 1 January 1929.
+                        </span>
+                        <span id="act-date-limit">
+                        Australian Capital Territory citizenship certificates before 1 January 1930.
+                        </span>
+                        <span id="sa-date-limit">
+                        South Australian citizenship certificates before 1 January 1944.
+                        </span>
+                        <span id="nt-date-limit">
+                        Northern Territory citizenship certificates before 1 January 1870.
+                        </span>
+                     </h3>
+                     </p>
+                     <p>You can <a href="#" onclick="javascript: returnToPOIPrimarySelection ();">return to the previous screen</a> and select a different form of primary identification or <a href="#" onclick="javascript: enableAndNavigateToUploadPanel ('panelAustralianBirthCertificate', 'Australian citizenship certificate');">upload a certified copy of your citizenship certificate</a> for manual verification.</p>
+                  </div>
+               </div>
+               <header class="au-header" role="banner">
+                  <h1 class="break desktop au-header-heading">Australian citizenship certificate details</span>
+                  </h1>
+                  <a class="au-direction-link au-direction-link--left" href="mycasa.html">Back</a>
+               </header>
+               
+               
+               <div class="row">
+               	<div class="col-xs-12 col-md-12 col-lg-6">
+               
+               
+               
+               <label class="casa-label-guidance" for="family-name-input">Family name
+               <div class="casa-form-guidance">Please enter your family name (surname) as written on your citizenship certificate</div>
+               <input class="au-text-input au-text-input--block" name="family-name-input" id="family-name-input" type="text" value="">
+               </label>
+               
+               <br>
+               <label class="casa-label-guidance" for="given-name-input">Given names
+               <div class="casa-form-guidance">Please enter all given names as written on your citizenship certificate, including any middle names</div>
+               <input class="au-text-input au-text-input--block" name="given-name-input" id="given-name-input" type="text" value="">
+               </label>
+              
+               <br>
+               <div class="form-section date-entry">
+                  <p class="casa-label-guidance">Date of birth</p>
+                  <div class="casa-form-guidance">For example, 31 01 1990</div>
+                  <div class="date date-day">
+                     <label class="casa-label-guidance" for="text-input-block1" class="casa-form-guidance">Day</label>
+                     <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="DD" id="text-input-block1" type="text" value="">
+                  </div>
+                  <div class="date date-month">
+                     <label class="casa-label-guidance" for="text-input-block2" class="casa-form-guidance">Month</label>
+                     <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="MM" id="text-input-block2" type="text" value="">
+                  </div>
+                  <div class="date date-year">
+                     <label class="casa-label-guidance" for="text-input-block3" class="casa-form-guidance">Year</label>
+                     <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="YYYY" id="text-input-block3" type="text" value="">
+                  </div>
+                  <br style="clear:both;" />
+               </div>
+               <br style="clear:both;" /> &nbsp;
+               <br />
+               <label class="casa-label-guidance" for="select-state">State or territory of birth
+               <div class="casa-form-guidance">This is the state or territory where your birth was registered as indicated on your certificate</div>
+               <select id="select-state" class="au-select au-select--block">
+                  <option value="0">Please select</option>
+                  <option value="act">Australian Capital Territory</option>
+                  <option value="nsw">New South Wales</option>
+                  <option value="nt">Northern Territory</option>
+                  <option value="sa" >South Australia</option>
+                  <option value="tas">Tasmania</option>
+                  <option value="qld">Queensland</option>
+                  <option value="vic">Victoria</option>
+                  <option value="wa">Western Australia</option>
+               </select>
+               </label>
+               <br />
+               <br />
+               <br />
+               <!-- ACT -->
+               <div id="input-act" class="input-state">
+                  <label class="casa-label-guidance" for="r-act-registration-number-input">Registration number</label>
+                  <div class="casa-form-guidance">
+                     Please enter your Registration number exactly as it appears on your citizenship certificate, including any slashes
+                  </div>
+                  <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-act-registration-number-input" type="text" value="">
+                  <br />
+                  <div class="casa-form-guidance">
+                     Depending on your citizenship certificate type, your Registration number may appear in different places. 
+                  </div>
+                  <ul class="casa-form-guidance">
+                     <li>Most ACT citizenship certificates will have the Registration number in the last section of the certificate under "Registration"
+                     <li>It may also appear in a box on the top right of the certificate</li>
+                  </ul>
+                  </label>
+               </div>
+               <!-- NSW -->
+               <div id="input-nsw" class="input-state">
+                  <label class="casa-label-guidance" for="r-nsw-registration-number-input">Registration number</label>
+                  <div class="casa-form-guidance">
+                     Please enter your Registration number exactly as it appears on your citizenship certificate, including any slashes
+                  </div>
+                  <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-nsw-registration-number-input" type="text" value="">
+                  <br />
+                  <div class="casa-form-guidance">
+                     Depending on your citizenship certificate type, your Registration number may appear in different places. 
+                  </div>
+                  <ul class="casa-form-guidance">
+                     <li>Most NSW citizenship certificates will have the Registration number in a box on the top right of the certificate</li>
+                     <li>It may also be labelled as 'No. in Register' or simply 'number' next to 'Particulars of registration'</li>
+                  </ul>
+                  </label>
+               </div>
+               <!-- NT -->
+               <div id="input-nt" class="input-state">
+                  <label class="casa-label-guidance" for="r-nt-registration-number-input">Registration number</label>
+                  <div class="casa-form-guidance">
+                     Please enter your Registration number exactly as it appears on your citizenship certificate, including any slashes or letters
+                  </div>
+                  <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-nt-registration-number-input" type="text" value="">
+                  <br />
+                  <div class="casa-form-guidance">
+                     Depending on your citizenship certificate type, your Registration number may appear in different places. 
+                  </div>
+                  <ul class="casa-form-guidance">
+                     <li>Most Northern Territory citizenship certificates will have the Registration number in the last section of the certificate under "Registration"</li>
+                     <li>It may appear in a box on the top right of the certificate, or next to 'Copy of entry no.' or 'Number in register'</li>
+                  </ul>
+               </div>
+               <!-- QLD -->
+               <div id="input-qld" class="input-state">
+                  <label>Date of registration</label>
+                  <div class="casa-form-guidance">
+                     Please enter your Date of registration in numeric format; for example 14 02 1990. This can be found in the "Registrar" section towards the bottom of your citizenship certificate.
+                  </div>
+                  <div class="form-section date-entry" style="margin-top:0.75em;padding-top:0;">
+                     <div class="date date-day">
+                        <label class="casa-label-guidance" for="r-qld-registration-date-dd" class="casa-form-guidance">Day</label>
+                        <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="DD" id="r-qld-registration-date-dd" type="text" value="">
+                     </div>
+                     <div class="date date-month">
+                        <label class="casa-label-guidance" for="r-qld-registration-date-mm" class="casa-form-guidance">Month</label>
+                        <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="MM" id="r-qld-registration-date-mm" type="text" value="">
+                     </div>
+                     <div class="date date-year">
+                        <label class="casa-label-guidance" for="r-qld-registration-date-yyyy" class="casa-form-guidance">Year</label>
+                        <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="YYYY" id="r-qld-registration-date-yyyy" type="text" value="">
+                     </div>
+                  </div>
+               </div>
+               <!-- SA -->
+               <div id="input-sa" class="input-state">
+                  <label class="casa-label-guidance" for="r-sa-registration-number-input">Registration number</label>
+                  <div class="casa-form-guidance">
+                     Please enter your Registration number exactly as it appears on your citizenship certificate
+                  </div>
+                  <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-sa-registration-number-input" type="text" value="">
+                  <br />
+                  <div class="casa-form-guidance">
+                     Depending on your citizenship certificate type, your Registration number may appear in different places. 
+                  </div>
+                  <ul class="casa-form-guidance">
+                     <li>Most South Australian citizenship certificates will have the Registration number in the last section of the certificate under "Registration"
+                     <li>Older citizenship certificates may have the Registration number on the top right or bottom right of the certificate</li>
+                  </ul>
+               </div>
+               <!-- TAS -->
+               <div id="input-tas" class="input-state">
+                  <label>Date of registration</label>
+                  <div class="casa-form-guidance">
+                     Please enter your Date of registration in numeric format; for example 14 02 1990. This can be found in the "Date registered" section towards the bottom of your citizenship certificate.
+                  </div>
+                  <div class="form-section date-entry" style="margin-top:0.75em;padding-top:0;">
+                     <div class="date date-day">
+                        <label class="casa-label-guidance" for="r-tas-registration-date-dd" class="casa-form-guidance">Day</label>
+                        <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="DD" id="r-tas-registration-date-dd" type="text" value="">
+                     </div>
+                     <div class="date date-month">
+                        <label class="casa-label-guidance" for="r-tas-registration-date-mm" class="casa-form-guidance">Month</label>
+                        <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="MM" id="r-tas-registration-date-mm" type="text" value="">
+                     </div>
+                     <div class="date date-year">
+                        <label class="casa-label-guidance" for="r-tas-registration-date-yyyy" class="casa-form-guidance">Year</label>
+                        <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="YYYY" id="r-tas-registration-date-yyyy" type="text" value="">
+                     </div>
+                  </div>
+               </div>
+               <!-- WA -->
+               <div id="input-wa" class="input-state">
+                  <label class="casa-label-guidance" for="r-wa-registration-number-input">Registration number</label>
+                  <div class="casa-form-guidance">
+                     Please enter your Registration number exactly as it appears on your citizenship certificate, including any slashes or letters
+                  </div>
+                  <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-wa-registration-number-input" type="text" value="">
+                  <br />
+                  <div class="casa-form-guidance">
+                     Depending on your citizenship certificate type, your Registration number may appear in different places. 
+                  </div>
+                  <ul class="casa-form-guidance">
+                     <li>Most Western Australian citizenship certificates will have the Registration number in a box on the top right of the certificate</li>
+                     <li>Older citizenship certificates may have the Registration number at the top of the certificate in first column or section of the certificate details</li>
+                  </ul>
+                  <div id="r-wa-registration-district" style="display:none;">
+                     <br /><br />
+                     <label class="casa-label-guidance" for="r-wa-registration-number-input">Registration district</label>
+                     <div class="casa-form-guidance">
+                        You appear to have an older-style citizenship certificate which will require you to select the registration district shown on your citizenship certificate
+                     </div>
+                     <select id="r-wa-registration-district-select" class="au-select au-select--block">
+                        <option value="02">Albany</option>
+                        <option value="03">Ashburton</option>
+                        <option value="04">Beverley</option>
+                        <option value="06">Black Range</option>
+                        <option value="05">Blackwood</option>
+                        <option value="07">Boulder</option>
+                        <option value="08">Bow River</option>
+                        <option value="09">Bowes</option>
+                        <option value="10">Broad Arrow</option>
+                        <option value="11">Broome</option>
+                        <option value="12">Bruce Rock</option>
+                        <option value="13">Bunbury</option>
+                        <option value="14">Canning</option>
+                        <option value="15">Champion Bay</option>
+                        <option value="16">Claremont</option>
+                        <option value="17">Coolgardie</option>
+                        <option value="21">Cottesloe</option>
+                        <option value="22">Dandaragan</option>
+                        <option value="23">Dongara</option>
+                        <option value="24">Dundas</option>
+                        <option value="18">East Coolgardie</option>
+                        <option value="36">East Kimberley</option>
+                        <option value="45">East Murchison</option>
+                        <option value="25">Esperance</option>
+                        <option value="26">Eucla</option>
+                        <option value="27">Fremantle</option>
+                        <option value="28">Gascoyne</option>
+                        <option value="29">Geraldton</option>
+                        <option value="30">Gingin</option>
+                        <option value="31">Greenough</option>
+                        <option value="32">Guildford</option>
+                        <option value="33">Irwin</option>
+                        <option value="34">Jarrahdale</option>
+                        <option value="35">Katanning</option>
+                        <option value="38">Kimberley Goldfields</option>
+                        <option value="39">Leederville</option>
+                        <option value="40">Melbourne</option>
+                        <option value="41">Merredin</option>
+                        <option value="42">Moora</option>
+                        <option value="43">Mount Margaret</option>
+                        <option value="44">Murchison</option>
+                        <option value="46">Murchison Goldfields</option>
+                        <option value="47">Murray</option>
+                        <option value="48">Newcastle</option>
+                        <option value="19">North Coolgardie</option>
+                        <option value="20">North-East Coolgardie</option>
+                        <option value="49">Northam</option>
+                        <option value="50">Northampton</option>
+                        <option value="51">Peak Hill</option>
+                        <option value="01" selected>Perth</option>
+                        <option value="52">Phillips River</option>
+                        <option value="53">Pilbara</option>
+                        <option value="54">Plantagenet</option>
+                        <option value="55">Port Hedland</option>
+                        <option value="56">Roebourne</option>
+                        <option value="57">Serpentine</option>
+                        <option value="58">Sharks Bay</option>
+                        <option value="59">Subiaco</option>
+                        <option value="60">Sussex</option>
+                        <option value="61">Swan</option>
+                        <option value="62">Toodyay</option>
+                        <option value="63">Vasse</option>
+                        <option value="64">Victoria</option>
+                        <option value="65">Victoria Plains</option>
+                        <option value="66">Wellington</option>
+                        <option value="37">West Kimberley</option>
+                        <option value="67">Williams</option>
+                        <option value="68">Wyndham</option>
+                        <option value="69">Yalgoo</option>
+                        <option value="70">Yilgarn</option>
+                        <option value="71">York</option>
+                        <option value="72">Christmas Island</option>
+                        <option value="73">Cocos Island</option>
+                     </select>
+                  </div>
+               </div>
+               <!-- VIC -->
+               <div id="input-vic" class="input-state">
+                  <label class="casa-label-guidance" for="r-vic-registration-number-input">
+                     Registration number
+                     <div class="casa-form-guidance">
+                        Please enter your Registration number exactly as it appears on your citizenship certificate, including slashes
+                     </div>
+                     <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-vic-registration-number-input" type="text" value="">
+                     <br />
+                     <div class="casa-form-guidance">
+                        Depending on your citizenship certificate type, your Registration number may appear in different places. 
+                     </div>
+                     <ul class="casa-form-guidance">
+                        <li>Most Victorian citizenship certificates will have the Registration number in a box on the top right of the certificate</li>
+                        <li>It may also be labelled as 'No.' on older certificates</li>
+                     </ul>
+                  </label>
+               </div>
+           
+            <br />
+            <br style="clear:both" />
+
+			<div id="validate">
+			
+            <a href="#" class="au-btn au-btn--primary">Next</a>
+            
+           
+            </div>
+            <hr />
+            <a href="#" class="au-btn au-btn--secondary">
+            Save and exit application
+            </a>
+            </form>
+         </div>
+          </div>
+         </div>
+           </div>
+         </div>
+         <div class="footer">
+            <div class="banner">
+               <div class=container>	
+                  This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
+               </div>
+            </div>
+            <div class="footer-wrapper">
+               <iframe src="footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+            </div>
+         </div>
+      </main>
+   </body>
+</html>
