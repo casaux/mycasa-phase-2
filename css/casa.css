@@ -52,6 +52,10 @@ main{
 	background:#13B5EA;
 }
 
+.casa-form-radio-selection{
+	margin-bottom:1rem;
+}
+
 .header .casa-menu .casa-menu-label, .header .casa-menu img{
 	display:block;
 	float:left;
