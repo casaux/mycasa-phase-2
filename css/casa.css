@@ -68,13 +68,17 @@ main{
 }
 
 .header .casa-menu-content{
-	position:fixed;
-	top:0rem;
+	position:absolute;
 	right:0;
-	width:300px;
-	height:600px;
-	background:red;
+	background:#e0e0e0;
 	z-index:999;
+	display:none;
+	min-width:300px;
+	cursor:default;
+}
+
+.casa-menu-item{
+	border-bottom:1px solid #313131;
 }
 
 
@@ -95,7 +99,8 @@ main{
 	background:#4C4C4C;
 	margin-top:120px;
 	min-height:200px;
-
+	z-index:2000;
+	position: relative;
 }
 
 
