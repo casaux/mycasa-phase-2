@@ -20,7 +20,7 @@
 				var radioValue = $("input[name='id']:checked"). val();
 				 
 				 if(radioValue=="id-passport-foreign3"){
-					 location.href="id-passport-foreign-perm-res.html";
+					 location.href="id-passport-foreign-upload.html";
 				 } else {
 					  location.href="id-passport-foreign-detail.html";
 				 }
@@ -115,19 +115,21 @@
 					
 					
 					
-					<h2 class="au-display-lg">Are you currently in Australia?</h2>
+					<h2 class="au-display-lg">Are you an Australian permanent resident?</h2>
 					
 					<br />
 					
+					<div class="casa-form-radio-selection">
+					
 					<label class="au-control-input casa-form-radio-selection" for="id-passport-foreign2">
 					 <input class="au-control-input__input" type="radio"  name="id" id="id-passport-foreign2" value="id-passport-foreign2" checked>
-						<span class="au-control-input__text">Yes, I am in in Australia</span>
+						<span class="au-control-input__text">Yes, I am an Australian permanent resident</span>
 					</label>	
 						
 						
 					<label class="au-control-input casa-form-radio-selection" for="id-passport-foreign3">
 					 <input class="au-control-input__input" type="radio"  name="id" id="id-passport-foreign3" value="id-passport-foreign3">
-						<span class="au-control-input__text">No, I am overseas</span>
+						<span class="au-control-input__text">No, I am not an Australian permanent resident</span>
 					</label>
 					
 					

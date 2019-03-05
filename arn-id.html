@@ -18,12 +18,7 @@
      
 			 $("#validate a"). click(function(){
 				var radioValue = $("input[name='id']:checked"). val();
-				 
-				 if(radioValue=="id-passport-foreign3"){
-					 location.href="id-passport-foreign-perm-res.html";
-				 } else {
-					  location.href="id-passport-foreign-detail.html";
-				 }
+				location.href=radioValue+".html";
 			 });
 				 
 				 
@@ -82,13 +77,7 @@
                   </div>
                   <div class="casa-menu">
                   
-                  
-                  	
-                  
-                     
-                     
-                     
-                     
+                      
                   </div>
                </div>
             </div>
@@ -103,7 +92,7 @@
                </nav>
               
                <header class="au-header" role="banner">
-                  <h1 class="break desktop au-header-heading">Foreign passport details</span>
+                  <h1 class="break desktop au-header-heading">Identity verifcation</span>
                   </h1>
                   <a class="au-direction-link au-direction-link--left" href="mycasa.html">Back</a>
                </header>
@@ -112,31 +101,69 @@
                <div class="row">
                	<div class="col-xs-12 col-md-12 col-lg-6">
                
+					<div class="au-callout">
+											
+					<p>You will need to verify your identity to complete your ARN application.</p>
 					
-					
-					
-					<h2 class="au-display-lg">Are you currently in Australia?</h2>
-					
-					<br />
-					
-					<label class="au-control-input casa-form-radio-selection" for="id-passport-foreign2">
-					 <input class="au-control-input__input" type="radio"  name="id" id="id-passport-foreign2" value="id-passport-foreign2" checked>
-						<span class="au-control-input__text">Yes, I am in in Australia</span>
-					</label>	
+					<p>Most identity documents can be verified online and this process should only take a few minutes.</p>
 						
+					</div>
+				
+				<p>Please choose one of the following identification types to continue:</p>
+				
+				<br />
+				
+				<form>
+				
+				<label class="au-control-input casa-form-radio-selection" for="id-passport">
+					 <input class="au-control-input__input" type="radio"  name="id" id="id-passport" value="id-passport" checked>
+						<span class="au-control-input__text casa-label-guidance"> Australian passport<br />
+						<span class="form-text casa-form-guidance">(current or expired within three years but not cancelled)</span></span>
+				</label>
+					
+					
+				<label class="au-control-input casa-form-radio-selection" for="id-birth-certificate">
+					 <input class="au-control-input__input" type="radio"  name="id" id="id-birth-certificate" value="id-birth-certificate">
+						<span class="au-control-input__text casa-label-guidance"> Australian birth certificate<br />
+						<span class="form-text casa-form-guidance">(full certificate and not an extract)</span></span>
+
+				</label>
+					
 						
-					<label class="au-control-input casa-form-radio-selection" for="id-passport-foreign3">
-					 <input class="au-control-input__input" type="radio"  name="id" id="id-passport-foreign3" value="id-passport-foreign3">
-						<span class="au-control-input__text">No, I am overseas</span>
-					</label>
+					<label class="au-control-input casa-form-radio-selection" for="id-citizenship-certificate">
+					 <input class="au-control-input__input" type="radio"  name="id" id="id-citizenship-certificate" value="id-citizenship-certificate">
+						<span class="au-control-input__text casa-label-guidance"> Australian citizenship certificate<br />
+						<span class="form-text casa-form-guidance">(full certificate and not an extract)</span></span>
+
+				</label>
 					
 					
 					
+				<label class="au-control-input casa-form-radio-selection" for="id-passport-foreign">
+					 <input class="au-control-input__input" type="radio"  name="id" id="id-passport-foreign" value="id-passport-foreign">
+						<span class="au-control-input__text casa-label-guidance"> Foreign passport<br />
+						<span class="form-text casa-form-guidance">(current and not expired)</span></span>
+				</label>	
+					
+					
+				<label class="au-control-input casa-form-radio-selection" for="id-immicard">
+					 <input class="au-control-input__input" type="radio"  name="id" id="id-immicard" value="id-immicard">
+						<span class="au-control-input__text casa-label-guidance"> ImmiCard<br />
+						<span class="form-text casa-form-guidance">(Evidence of Immigration Status; issued to some temporary visa holders in Australia)</span></span>
+				</label>				
+					
+					
+				
+				
 					
 					<br /><br />
 			<div id="validate">
 			
             <a href="#" class="au-btn au-btn--primary">Next</a>
+				
+				
+								<p><a href="#">I don't have any of these documents</a></p>
+
             
            
             </div>

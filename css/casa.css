@@ -54,6 +54,7 @@ main{
 
 .casa-form-radio-selection{
 	margin-bottom:1rem;
+	display:block;
 }
 
 .header .casa-menu .casa-menu-label, .header .casa-menu img{
