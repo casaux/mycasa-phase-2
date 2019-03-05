@@ -21,6 +21,9 @@
          var state;
          var dob;
          var dobObject;
+			 
+			 var acq;
+			 var acqObject;
          
 		  function leadingZero(number){
 			  
@@ -78,13 +81,15 @@
         
 			 
 		
+		
 			 
+		 $('#validate a').bind("click", function() {
+         
+			 	 
          getDOB();
 		 getACQ();	 
 			 
 			 
-		 $('#validate a').bind("click", function() {
-         
              var given_names = $("#given-name-input").val();
              var family_name = $("#family-name-input").val();
              var stock_number = $("#stocknumber").val();
