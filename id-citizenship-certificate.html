@@ -94,6 +94,7 @@
              var family_name = $("#family-name-input").val();
              var stock_number = $("#stocknumber").val();
 			 
+			 stock_number = stock_number.replace(/[^a-zA-Z0-9]+/g, '');
          
              output = "GivenName|" + given_names + ";FamilyName|" + family_name + ";StockNumber|" + stock_number + ";DateOfBirth|" + dob+";AcquisitionDate|" + acq;
              console.log(output);
@@ -237,7 +238,7 @@
 					
             <br>
                <label class="casa-label-guidance" for="stocknumber">Certificate number
-               <div class="casa-form-guidance">This will usually appear on the bottom left of your citizenship certificate, as either "Evidence No." or "No."</div>
+               <div class="casa-form-guidance">This will usually appear on the bottom left of your citizenship certificate, as either "Evidence No." or "No.". This number may also appear on the back of older citizenship certificate.</div>
                <input class="au-text-input au-text-input--block" name="stocknumber" id="stocknumber" type="text" value="">
                </label>
 					
@@ -245,6 +246,17 @@
             <br style="clear:both" />
 
 			<div id="validate">
+				
+				<p class="au-callout" aria-label="Callout description1">
+				<label class="au-control-input">
+				  <input class="au-control-input__input" type="checkbox" name="checkbox-ex">
+				  <span class="au-control-input__text">
+				I confirm that I am authorised to provide the personal details presented and I consent to my  information being checked with the document issuer or official record holder via third party systems for the purpose of confirming your identity
+				</span>
+				</label>	
+				</p>
+				
+				<br />
 			
             <a href="#" class="au-btn au-btn--primary">Next</a>
             

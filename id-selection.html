@@ -14,13 +14,13 @@
          /* page specific js */
          
          $(document).ready(function() {
-         
+       
      
 			 $("#validate a"). click(function(){
 				var radioValue = $("input[name='id']:checked"). val();
-				location.href=radioValue+".html";
+				window.location.href=radioValue+".html";
 			 });
-				 
+				
 				 
          });
       </script>
@@ -113,7 +113,7 @@
 				
 				<br />
 				
-				<form>
+				<form action="#">
 				
 				<label class="au-control-input casa-form-radio-selection" for="id-passport">
 					 <input class="au-control-input__input" type="radio"  name="id" id="id-passport" value="id-passport" checked>
