@@ -14,8 +14,13 @@
          /* page specific js */
          
          $(document).ready(function() {
-         
-				 
+       
+     
+			 $("#validate a"). click(function(){
+				var radioValue = $("input[name='id']:checked"). val();
+				window.location.href=radioValue+".html";
+			 });
+				
 				 
          });
       </script>
@@ -24,47 +29,11 @@
          
          
          
-         #validate {
-		  display: block;
-		  }
-		  .form-sub-input {
-		  margin-left: 2.5em;
-		  }
-		  .panel .form-sub-input{
-		  opacity:0.5;
-		  }
-		  .panel.active .form-sub-input{
-		  opacity:1;
-		  }
-		   
-		  .date-limit{
-		  display:none;
-		  }
-		  .panel .au-control-input__input{
-		  display:block;
-		  height:0;
-		  width:0;
-		  }
-		   
-		   #date-limit span, .input-state{
-			   display:none;
-		   }
-		  
-		  #passport{
-			  display:none;
-		  }
-		  
-		  #id-ap{
-			  margin-bottom:2.5rem;
-			  display:block;
-		  }
-         
-         
       </style>
    </head>
    <body class="live-demo au-body au-grid">
       <main class="au-grid">
-         <div class="header">
+        <div class="header">
             <div class="container">
                <div class="row">
                
@@ -75,11 +44,13 @@
                   </div>
                   <div class="casa-menu">
                   
-               	<div class="au-body au-body--dark">
-                        <a class="au-btn au-btn--dark" href="signed-out.html">Sign out</a>
-                     </div>
+                  
+                  
+                  
                   
                   </div>
+                  
+                  
                   
                   
                   
@@ -96,7 +67,7 @@
                </nav>
               
                <header class="au-header" role="banner">
-                  <h1 class="break desktop au-header-heading">Foreign passport upload</span>
+                  <h1 class="break desktop au-header-heading">X</span>
                   </h1>
                   <a class="au-direction-link au-direction-link--left" href="mycasa.html">Back</a>
                </header>
@@ -104,43 +75,9 @@
                
                <div class="row">
                	<div class="col-xs-12 col-md-12 col-lg-6">
-               	
-               	
-               	
-               	
-               		<div class="au-body au-page-alerts au-page-alerts--info">
-  						<p><strong>Unfortunately we can only verify foreign passports for applicants currently in Australia</strong>.</p>
-					</div>
-               	
-											<p>If you are travelling to Australia soon, you may want to wait and resubmit your application then. Otherwise, you will need to upload a <a href="#" target="_blank">certified copy</a> of your foreign passport for manual verification.</p>
-
-					
-					<p>Your aviation reference number will be issued within five business days of your application being submitted.</p>
-					
-					<br />
-					<div class="au-callout">
-						<p>Uploaded attachments must be no more than 25mb in size.</p>
-						<p>Accepted file types are PDF documents (.pdf) and the following image formats: .jpg, .bmp and .png</p>
-					</div>
-					
-					<h2 class="au-display-sm">Upload certified copy of foreign passport</h2><br />
-					
-					<a href="#" class="au-btn au-btn--secondary">Choose file</a>
-					<br /><br />
-					
-					<br /><br />
-			<div id="validate">
-			
-            <a href="#" class="au-btn au-btn--primary">Next</a>
-            
-           
-            </div>
-            <hr />
-            <a href="arn-saved.html" class="au-btn au-btn--secondary">
-            Save and exit application
-            </a>                 
-            </form>
-         </div>
+               
+               
+               
           </div>
          </div>
            </div>
