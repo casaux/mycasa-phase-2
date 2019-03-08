@@ -14,60 +14,19 @@
          /* page specific js */
          
          $(document).ready(function() {
-         
+       
      
 			 $("#validate a"). click(function(){
 				var radioValue = $("input[name='id']:checked"). val();
-				 
-				 if(radioValue=="id-passport-foreign3"){
-					 location.href="id-passport-foreign-upload.html";
-				 } else {
-					  location.href="id-passport-foreign-detail.html";
-				 }
+				window.location.href=radioValue+".html";
 			 });
-				 
+				
 				 
          });
       </script>
       <style type="text/css">
          /* page specific css */
          
-         
-         
-         #validate {
-		  display: block;
-		  }
-		  .form-sub-input {
-		  margin-left: 2.5em;
-		  }
-		  .panel .form-sub-input{
-		  opacity:0.5;
-		  }
-		  .panel.active .form-sub-input{
-		  opacity:1;
-		  }
-		   
-		  .date-limit{
-		  display:none;
-		  }
-		  .panel .au-control-input__input{
-		  display:block;
-		  height:0;
-		  width:0;
-		  }
-		   
-		   #date-limit span, .input-state{
-			   display:none;
-		   }
-		  
-		  #passport{
-			  display:none;
-		  }
-		  
-		  #id-ap{
-			  margin-bottom:2.5rem;
-			  display:block;
-		  }
          
          
       </style>
@@ -85,9 +44,7 @@
                   </div>
                   <div class="casa-menu">
                   
-                  	<div class="au-body au-body--dark">
-                        <a class="au-btn au-btn--dark" href="signed-out.html">Sign out</a>
-                     </div>
+                  
                   
                   
                   
@@ -102,59 +59,66 @@
          </div>
          <div class="body">
             <div class="container">
-               <nav class="au-breadcrumbs" aria-label="breadcrumb">
+               <!--nav class="au-breadcrumbs" aria-label="breadcrumb">
                   <ul class="au-link-list au-link-list--inline">
                      <li><a href="welcome.html">myCASA</a></li>
-                     <li>Aviation reference number application</li>
+                     <li><abbr title="Aviation reference number">ARN</abbr> application</li>
                   </ul>
-               </nav>
+               </nav-->
               
                <header class="au-header" role="banner">
-                  <h1 class="break desktop au-header-heading">Foreign passport details</span>
+                  <h1 class="break desktop au-header-heading">Aviaton reference number</span>
                   </h1>
                   <a class="au-direction-link au-direction-link--left" href="mycasa.html">Back</a>
                </header>
                
                
                <div class="row">
-               	<div class="col-xs-12 col-md-12 col-lg-6">
+               	<div class="col-xs-12 col-md-12 col-lg-12">
                
 					
+				<div class="au-callout">
 					
+						<div class="row">
+               	<div class="col-xs-12 col-md-12 col-lg-9">
 					
-					<h2 class="au-display-lg">Are you an Australian permanent resident?</h2>
-					
-					<br />
-					
-					<div class="casa-form-radio-selection">
-					
-					<label class="au-control-input casa-form-radio-selection" for="id-passport-foreign2">
-					 <input class="au-control-input__input" type="radio"  name="id" id="id-passport-foreign2" value="id-passport-foreign2" checked>
-						<span class="au-control-input__text">Yes</span>
-					</label>	
+					<p>To access myCASA services you will need an <strong>aviation reference number</strong> (ARN) 
+						and proof of identification to <strong>verify your identity</strong>. </p>
 						
-						
-					<label class="au-control-input casa-form-radio-selection" for="id-passport-foreign3">
-					 <input class="au-control-input__input" type="radio"  name="id" id="id-passport-foreign3" value="id-passport-foreign3">
-						<span class="au-control-input__text">No</span>
-					</label>
+						<p>This will require one of the following documents, so please have one of these ready before continuing:</p>
 					
+					<ul>
+						<li>Australian passport</li>
+						<li>Australian birth certificate</li>
+						<li>Australian citizenship certificate</li>
+						<li>Foreign passport</li>
+						<li>ImmiCard</li>
+					</ul>
 					
+							</div>
+					</div>
 					
-					
-					<br /><br />
-			<div id="validate">
 			
-            <a href="#" class="au-btn au-btn--primary">Next</a>
-            
-           
-            </div>
-            <hr />
-            <a href="arn-saved.html" class="au-btn au-btn--secondary">
-            Save and exit application
-            </a>                 
-            </form>
-         </div>
+				</div>
+
+				<br />
+
+				<h2>Need an ARN?</h2>
+					
+					
+				<a class="au-cta-link" href="new-arn-personal.html">Apply for aviation reference number (ARN)</a>
+					<br />
+				
+				
+				<br /><br />
+				
+					<h2>Already have an ARN?</h2>
+					
+				<a class="au-cta-link" href="#">Link existing aviation reference number (ARN)</a>
+					
+				
+               
+               
           </div>
          </div>
            </div>

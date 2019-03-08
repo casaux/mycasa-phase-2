@@ -134,10 +134,10 @@ cursor:pointer;
 
 
 
-.casa-dashboard-item h2{
-	font-size:1.2rem;
-	margin:0;
-	padding:0;
+.casa-dashboard-item h2 {
+    font-size: 1.2rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 
@@ -275,7 +275,7 @@ main{
 
 .header .logo.au-body.au-body--dark{
 	float:left;
-	margin-left:24px;
+	margin-left:8px;
 	background-color: transparent;
 }
 
@@ -427,7 +427,7 @@ a.cancel{
 }
 
 .au-body h2{
-	font-size: 2rem;
+	font-size: 1.75rem;
     line-height: 1.25;
     margin-top:1rem;
 }
@@ -490,15 +490,6 @@ a.cancel{
 	display:block;
 	font-weight:normal;
 }
-
-.casa-dashboard-item{
-	background:#f8f8f8;
-	float:left;
-	width:50%;
-}
-
-
-
 
 .casa-status-box{
     margin:0;
