@@ -405,7 +405,7 @@ a.cancel{
 	padding:0.5rem 0;
 }
 
-.body-row:nth-child(even){
+.body-row:nth-child(odd){
 	background:#fafafa;
 }
 

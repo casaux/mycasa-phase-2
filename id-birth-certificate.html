@@ -539,6 +539,7 @@
 				 var slash = registration_number.indexOf("/");
 
 				 registration_year = registration_number.substr(slash+1,registration_number.length);
+				 registration_year = registration_year.substr(0,4);
 
 				 if(slash > 0){
 				 registration_number = registration_number.substr(0,slash);
