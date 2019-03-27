@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>myCASA - Hank Barker</title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="initial-scale=1">
+      <link rel="stylesheet" href="../mycasa-src/css/furnace.min.css">
+      <link rel="stylesheet" href="../mycasa-src/css/casa.css">
+      <script type="text/javascript" src="../mycasa-src/js/furnace.min.js"></script>
+      <script type="text/javascript" src="../mycasa-src/js/jquery.min.js"></script>
+      <script type="text/javascript" src="../mycasa-src/js/jquery.js"></script>
+      <script type="text/javascript">
+         /* page specific js */
+         
+         $(document).ready(function() {
+       
+     
+			 $("#validate a"). click(function(){
+				var radioValue = $("input[name='id']:checked"). val();
+				window.location.href=radioValue+".html";
+			 });
+				
+				 
+         });
+      </script>
+      <style type="text/css">
+         /* page specific css */
+         
+         
+         
+      </style>
+   </head>
+   <body class="live-demo au-body au-grid">
+      <main class="au-grid">
+        <div class="header">
+            <div class="container">
+               <div class="row">
+               
+               
+               
+                  <div class="logo au-body au-body--dark">
+                     <a href="index.html"><img src="../mycasa-src/img/CASALOGO-white-i.svg"></a>
+                  </div>
+                  <div class="casa-menu">
+                  
+                  	<div id="dropdown-menu">
+						<div id="dd-menu"><a class="au-btn au-btn--dark menu" href="#"><img src="../mycasa-src/img/menu.png" height="20" />Menu</a></div>
+						<div id="dd-close"><a class="au-btn au-btn--dark menu" href="#"><img src="../mycasa-src/img/close.png" height="20" />Close</a><br />
+						<br />
+						<p id="mycasa-home"><a href="#">myCASA home</a></p>
+						<p><a href="mycasa-signed-out.html">Sign out</a></p>
+						</div>
+                  
+                  
+                  </div>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+               </div>
+            </div>
+         </div> <div class="body"><div class="banner">
+				<div class=container>
+					<div class="row">
+					 <div class="col-xs-12">
+				This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
+				</div>
+				</div>
+			</div>
+		</div>
+            <div class="container">
+               <!--nav class="au-breadcrumbs" aria-label="breadcrumb">
+                  <ul class="au-link-list au-link-list--inline">
+                     <li><a href="welcome.html">myCASA</a></li>
+                     <li><abbr title="Aviation reference number">ARN</abbr> application</li>
+                  </ul>
+               </nav-->
+          
+		  
+		  <div class="row">
+			
+			
+		  
+				     
+               <header class="au-header" role="banner">
+                  <h1 class="break desktop au-header-heading">Welcome to myCASA</span>
+                  </h1>
+               </header>
+				 
+			 <div class="row">
+				 
+				 
+			
+			
+			 <div class="col-lg-4 col-xs-12">
+			  	<div class="casa-dashboard-item">
+			  		<div class="icon icon-profile"></div>
+			  		<h2><a href="#">Profile</a></h2>
+			  		Hank Baker<br />
+			  	</div>
+			  </div>
+			  
+			  <!--
+			  
+			  <div class="col-xs-4">
+			  	<div class="casa-dashboard-item">
+			  		<div class="icon icon-reoc"></div>
+			  		<h2><a href="#">RPA Operator's Certificate (ReOC)</a></h2>
+			  		Expiry date: 31 Feb 2019
+			  	</div>
+			  </div>
+			  
+			  -->
+			  
+				<!--
+				
+			  <div class="col-lg-4 col-xs-12">
+			  	<div class="casa-dashboard-item">
+			  		<div class="icon icon-licences"></div>
+			  		<h2><a href="#.html">Licences and accreditation</a></h2>
+			  		1 licence <br />
+			  		1 certificate<br />
+			  	</div>
+			  </div>
+			  
+-->
+
+			  <!--
+			  
+			  <div class="col-xs-4">
+			  	<div class="casa-dashboard-item">
+			  		<div class="icon icon-rpa"></div>
+			  		<h2><a href="#">Remotely Piloted Aircraft (RPA)</a></h2>
+			  		4 registered RPAs
+			  	</div>
+			  </div>
+			  
+			  -->
+			  
+			  <div class="col-lg-4 col-xs-12">
+			  	<div class="casa-dashboard-item">
+			  		<div class="icon icon-applications"></div>
+			  		<h2><a href="#">Applications</a></h2>
+					1 application <span class="badge badge-success">In progress</span><br />
+			  	</div>
+			  </div>
+			  
+			  <!--
+			</div>
+			
+			
+			
+			<h2>Services and new applications</h2>
+			<br />
+			<div class="row">
+
+			
+			 <div class="col-lg-4 col-xs-12">
+			  	<div class="casa-dashboard-item">
+			  		<div class="icon icon-drones"></div>
+			  		<h2><a href="#">Drones and <abbr title="Remotely Piloted Aircraft">RPA</abbr> registration</a></h2>
+			  		Register drones and RPA
+			  	</div>
+			  </div>
+			  
+			   <div class="col-lg-4 col-xs-12">
+			  	<div class="casa-dashboard-item">
+			  		<div class="icon icon-reoc"></div>
+			  		<h2><a href="#"><abbr title="Remotely Piloted Aircraft Operator's Certificates">ReOC</abbr></a></h2>
+			  		Apply for a <abbr title="Remotely Piloted Aircraft">RPA</abbr> Operator's Certificates (ReOC)
+			  	</div>
+			  </div>
+						  <div class="col-lg-4 col-xs-12">
+			  	<div class="casa-dashboard-item">
+			  		<div class="icon icon-aircraft"></div>
+			  		<h2><a href="#">Aircraft registration</a></h2>
+			  		Register aircraft
+			  	</div>
+			  </div>
+			
+			
+			   <div class="col-lg-4 col-xs-12">
+			  	<div class="casa-dashboard-item">
+			  		<div class="icon icon-vh"></div>
+			  		<h2><a href="#"><abbr title="">VH mark</abbr></a></h2>
+			  		Apply for a VH registration mark
+			  	</div>
+			  </div>
+			
+			-->
+			
+			
+			 
+			 </div>
+			 
+			 
+			 
+			 
+			</div>
+			
+		</div>	
+	</div> <div class="footer">
+        
+		<div class="footer-wrapper">
+			<iframe src="../mycasa-src/footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+		</div>
+	</div>
+	
+	
+</main>
+	
+	
+	
+	
+</body>
+</html>
